@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        /* Gaya laporan */
+        /* ... (Gaya laporan yang ada di sini) */
+    </style>
+</head>
+<body>
+ <br>
+ <br>
+
+    <form id="editForm">
+        <label for="namaDosen">NAMA DOSEN:</label>
+        <input type="text" id="namaDosen" value="LukmanSupiardi, S.Kom"><br>
+
+        <label for="nipDosen">NIP DOSEN:</label>
+        <input type text" id="nipDosen" value="1122020112306"><br>
+
+        <label for="nrpMahasiswa">NIM Mahasiswa:</label>
+        <input type="text" id="nimMahasiswa" value="4032302302"><br>
+
+        <label for="namaMahasiswa">Nama Mahasiswa:</label>
+        <input type="text" id="namaMahasiswa" value="Ali Gozali"><br>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" value="Jalan Lidah Wetan Jawa Timur"><br>
+
+        <label for="tanggal">Tanggal:</label>
+        <input type="text" id="tanggal" value="Surabaya, 14 Oktober 2023"><br>
+
+        <button type="button" onclick="generateAndDownloadPDF()">Update & Download PDF</button>
+    </form>
+
+    <!-- Template laporan -->
+    <div id="laporan" style="display: none;">
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,900,900i');
+            <!-- @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i'); -->
+            body {
+                color:#000000;
+                font:300 0.8em/100% 'Source Sans Pro';
+            }
+            h1 {
+                font:900 20px 'Source Sans Pro';
+    
+            }
+            
+            #container {
+                margin-top:20px;
+                width:100%;
+                padding-left:0;
+                position: relative;
+                text-align: center;
+        }
+            #floated {
+                width:70px;
+                float:left;
+                position: absolute;
+                left: 0px;
+            }
+            h2 {
+                font:600 17px 'Source Sans Pro';
+            }
+            h2.judul {
+                padding:2px 0 0 0;
+                line-height:18px;
+            }
+            h3 {
+                font:600 12px 'Source Sans Pro';
+    
+            }
+            table.bio {
+                vertical-align:top;
+                text-align:left;
+                font-size:13px;
+                font-weight:400;
+            }
+            table.bio th {
+                vertical-align:top;
+                text-align:left;
+                font-size:13px;
+                font-weight:600;
+            }
+            table.list {
+                font-size:12px;
+                font-weight:400;
+                border-collapse:collapse;
+            }
+            table.list th, table.list td {
+                border:1px solid #000000;
+            }
+            table.list th {
+                font-size:13px;
+                font-weight:600;
+            }
+            table.list table.child {
+                border-collapse:collapse;
+                border:none;
+            }
+            ul {
+                margin-top:0px;
+                margin-left:-10px;
+            }
+            ul li {
+                padding-left:0px;
+                font-size:11px;
+                font-style:italic;
+                list-style:circle;
+            }
+            .ttd {
+                font-size:13px;
+            }
+            .ttd-stempel {
+                font-size:13px;
+                background: url('') right 55px center no-repeat;
+                background-size: 20% auto;
+            }
+        </style>
+    </head>
+    <body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+    <div align="center">
+    <table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+        <td width="100%" align="center" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td><div id="container"><div id="floated"><img src="" alt="" width="80"></div>
+            <h2 class="judul">DIREKTORAT PENDIDIKAN<br>
+              UNIVERSITAS AIRLANGGA SURABAYA</h2>
+              </div></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td align="center" scope="col"><h1>JADWAL MATA KULIAH MAHASISWA (JMKM)</h1></td>
+        </tr>
+      <tr>
+        <td align="center" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td width="49%"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="bio">
+              <tbody><tr>
+                <th width="110">JURUSAN</th>
+                <td>TEKNIK INFORMATIKA</td>
+                </tr>
+              <tr>
+                <th>SEMESTER</th>
+                <td>Gasal 2023</td>
+                </tr>
+              <tr>
+                <th>DOSEN WALI</th>
+                <td>LukmanSupiardi, S.Kom</td>
+                </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td>NIP. 1122020112306     </td>
+                </tr>
+            </tbody></table></td>
+            <td width="10">&nbsp;</td>
+            <td width="49%"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="bio">
+              <tbody><tr>
+                <th width="60">NIM</th>
+                <td>4032302302</td>
+              </tr>
+              <tr>
+                <th>NAMA</th>
+                <td>Ali Gozali</td>
+              </tr>
+              <tr>
+                <th>ALAMAT</th>
+                <td>Jalan Lidah Wetan</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td>Jawa Timur</td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td width="10">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody></table>      </td>
+      </tr>
+    </tbody></table>
+    <table width="90%" border="0" cellspacing="1" cellpadding="4" class="list">
+      <tbody><tr> 
+        <th width="25">NO</th>
+        <th width="69">KODE</th>
+        <th>MATA KULIAH</th>
+        <th width="40">SKS</th>
+        <th width="60">KELAS</th>
+        <th width="60">KET</th>
+      </tr>
+        <tr> 
+        <td align="center">1</td>
+        <td align="center">ES234315</td>
+        <td>ALGORITMA PEMOGRAMAN</td>
+        <td align="center">3</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">2</td>
+        <td align="center">ES234419</td>
+        <td>MANAJEMEN BASIS DATA</td>
+        <td align="center">3</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">3</td>
+        <td align="center">ES234421</td>
+        <td>SISTEM OPERASI</td>
+        <td align="center">2</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">4</td>
+        <td align="center">ES234528</td>
+        <td>Pemrograman Berorientasi Objek</td>
+        <td align="center">3</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">5</td>
+        <td align="center">ES234525</td>
+        <td>KEAMANAN JARINGAN KOMPUTER</td>
+        <td align="center">3</td>
+        <td align="center">C</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">6</td>
+        <td align="center">ES234422</td>
+        <td>DESAIN PERANGKAT LUNAK</td>
+        <td align="center">4</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <td align="center">7</td>
+        <td align="center">ES234529</td>
+        <td>PENGOLAHAN DATA</td>
+        <td align="center">4</td>
+        <td align="center">B</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+        <tr> 
+        <th colspan="3">JUMLAH SKS</th>
+        <th align="center">22</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </tbody></table>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td>&nbsp;
+          </td>
+        </tr>
+      </tbody></table>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" class="ttd-stempel">
+        <tbody><tr>
+          <td width="100"></td>
+          <td valign="top" width="250"><ul>
+            <li>Jadwal ini berfungsi sebagai bukti pemilihan mata kuliah dan merupakan persyaratan untuk mengikuti aktivitas akademik.</li>
+            <li>Apabila terdapat perbedaan atau ketidaksesuaian dalam pemilihan mata kuliah, maka yang dianggap benar adalah yang tercatat dalam Sistem Informasi Akademik online.</li>
+          </ul></td>
+          <td>&nbsp;</td>
+          <td class="ttd" width="200">
+              <p>Surabaya,
+            14 Oktober 2023<br>
+                Direktur Pendidikan,
+                <br>
+                <br>
+                <br>
+                <br>
+              Prof. Budi Hartono        <br>
+              NIP.
+              112121220212121       </p>      </td>
+        </tr>
+      </tbody></table>
+      <p>
+    </div>
+
+    <script>
+        function generateAndDownloadPDF() {
+            // Mengambil nilai dari input fields
+            var namaDosen = document.getElementById("namaDosen").value;
+            var namaMahasiswa = document.getElementById("namaMahasiswa").value;
+            var nimMahasiswa = document.getElementById("nimMahasiswa").value;
+            var alamat = document.getElementById("alamat").value;
+            var tanggal = document.getElementById("tanggal").value;
+
+            // Mengganti nilai pada laporan dengan nilai yang diambil dari input fields
+            var laporan = document.getElementById("laporan");
+            laporan.style.display = "block"; // Menampilkan elemen laporan
+            laporan.innerHTML = laporan.innerHTML.replace("LukmanSupiardi, S.Kom", namaDosen);
+            laporan.innerHTML = laporan.innerHTML.replace("Ali Gozali", namaMahasiswa);
+            laporan.innerHTML = laporan.innerHTML.replace("4032302302", nimMahasiswa);
+            laporan.innerHTML = laporan.innerHTML.replace("Jalan Lidah Wetan", alamat);
+            laporan.innerHTML = laporan.innerHTML.replace("Surabaya, 14 Oktober 2023", tanggal);
+
+
+            // Sembunyikan elemen formulir
+            var editForm = document.getElementById("editForm");
+            editForm.style.display = "none";
+        
+            // Hapus judul halaman
+            document.title = "";
+        }
+        </script>
+        
+</body>
+</html>
